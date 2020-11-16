@@ -1,0 +1,32 @@
+server:
+  port: 10004
+spring:
+  application:
+    name: tact-stock
+  datasource:
+    url: ${MYSQL:jdbc:mysql://192.168.1.253:3306/ddd?allowPublicKeyRetrieval=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${MYSQL_USERNAME:root}
+    password: ${MYSQL_PASSWORD:900922}
+  jpa:
+    hibernate:
+      ddl-auto: update
+  kafka:
+    bootstrap-servers: ${KAFKA:192.168.1.253:9092}
+    consumer:
+      group-id: tact-stock
+  redis:
+    host: ${REDIS:192.168.1.253}
+  profiles:
+    active: ${ACTIVE:dev}
+
+topic:
+  warehouse:
+    event: ${WAREHOUSE_EVENT:warehouse_event}
+  goods:
+    event: ${GOODS_EVENT:goods_event}
+  seller:
+    event: ${SELLER_EVENT:seller_event}
+  order:
+    event: ${ORDER_EVENT:order_event}
+    command: ${ORDER_COMMAND:order_command}

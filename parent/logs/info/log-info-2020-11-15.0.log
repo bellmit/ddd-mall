@@ -1,0 +1,455 @@
+2020-11-15 22:22:17.746 [main] INFO  com.tactbug.mall.stock.TactStockApplication - Starting TactStockApplication on DESKTOP-36Q4NLK with PID 11732 (D:\document\project\mall\stock\target\classes started by redwolf in D:\document\project\mall\parent)
+2020-11-15 22:22:17.751 [main] INFO  com.tactbug.mall.stock.TactStockApplication - The following profiles are active: dev
+2020-11-15 22:22:19.314 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-15 22:22:19.314 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-15 22:22:19.454 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 143ms. Found 5 JPA repository interfaces.
+2020-11-15 22:22:19.469 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-15 22:22:19.485 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-11-15 22:22:19.500 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.tactbug.mall.stock.inbound.message.messageBox.MessageJpa. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2020-11-15 22:22:19.500 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.tactbug.mall.stock.outbound.repository.goods.jpa.GoodsEntityDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2020-11-15 22:22:19.500 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.tactbug.mall.stock.outbound.repository.seller.jpa.SellerEntityDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2020-11-15 22:22:19.500 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.tactbug.mall.stock.outbound.repository.stock.jpa.StockEntityDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2020-11-15 22:22:19.500 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.tactbug.mall.stock.outbound.repository.warehouse.jpa.WarehouseEntityDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2020-11-15 22:22:19.500 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16ms. Found 0 Redis repository interfaces.
+2020-11-15 22:22:20.280 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 10004 (http)
+2020-11-15 22:22:20.295 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-10004"]
+2020-11-15 22:22:20.295 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-15 22:22:20.295 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-15 22:22:20.414 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-15 22:22:20.414 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2603 ms
+2020-11-15 22:22:20.774 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-15 22:22:20.835 [task-1] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-15 22:22:20.919 [task-1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-15 22:22:20.964 [main] INFO  org.redisson.Version - Redisson 3.13.6
+2020-11-15 22:22:21.049 [task-1] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-15 22:22:21.155 [task-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-15 22:22:21.311 [task-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-11-15 22:22:21.327 [task-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-15 22:22:22.048 [task-1] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-15 22:22:22.065 [task-1] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-15 22:22:22.206 [redisson-netty-2-15] INFO  o.r.connection.pool.MasterPubSubConnectionPool - 1 connections initialized for /192.168.1.253:6379
+2020-11-15 22:22:22.285 [redisson-netty-2-17] INFO  org.redisson.connection.pool.MasterConnectionPool - 24 connections initialized for /192.168.1.253:6379
+2020-11-15 22:22:23.216 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-11-15 22:22:24.009 [main] INFO  org.apache.kafka.clients.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [192.168.1.253:9092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2020-11-15 22:22:24.077 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version: 2.5.1
+2020-11-15 22:22:24.078 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: 0efa8fb0f4c73d92
+2020-11-15 22:22:24.078 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1605450144076
+2020-11-15 22:22:24.404 [main] INFO  org.apache.kafka.clients.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [192.168.1.253:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = tact-stock
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2020-11-15 22:22:24.441 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version: 2.5.1
+2020-11-15 22:22:24.441 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: 0efa8fb0f4c73d92
+2020-11-15 22:22:24.441 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1605450144441
+2020-11-15 22:22:24.463 [main] INFO  org.apache.kafka.clients.consumer.KafkaConsumer - [Consumer clientId=consumer-tact-stock-1, groupId=tact-stock] Subscribed to topic(s): goods_event
+2020-11-15 22:22:24.468 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService
+2020-11-15 22:22:24.479 [main] INFO  org.apache.kafka.clients.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [192.168.1.253:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = tact-stock
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2020-11-15 22:22:24.489 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version: 2.5.1
+2020-11-15 22:22:24.490 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: 0efa8fb0f4c73d92
+2020-11-15 22:22:24.490 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1605450144489
+2020-11-15 22:22:24.503 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-tact-stock-1, groupId=tact-stock] Cluster ID: h6x-JsM5RtimFHWXnhkkxQ
+2020-11-15 22:22:24.505 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  o.a.k.c.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-tact-stock-1, groupId=tact-stock] Discovered group coordinator 192.168.1.253:9092 (id: 2147483647 rack: null)
+2020-11-15 22:22:24.506 [main] INFO  org.apache.kafka.clients.consumer.KafkaConsumer - [Consumer clientId=consumer-tact-stock-2, groupId=tact-stock] Subscribed to topic(s): warehouse_event
+2020-11-15 22:22:24.506 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService
+2020-11-15 22:22:24.509 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  o.a.k.c.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-tact-stock-1, groupId=tact-stock] (Re-)joining group
+2020-11-15 22:22:24.510 [main] INFO  org.apache.kafka.clients.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [192.168.1.253:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = tact-stock
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2020-11-15 22:22:24.518 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-tact-stock-2, groupId=tact-stock] Cluster ID: h6x-JsM5RtimFHWXnhkkxQ
+2020-11-15 22:22:24.519 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  o.a.k.c.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-tact-stock-2, groupId=tact-stock] Discovered group coordinator 192.168.1.253:9092 (id: 2147483647 rack: null)
+2020-11-15 22:22:24.520 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version: 2.5.1
+2020-11-15 22:22:24.520 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  o.a.k.c.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-tact-stock-2, groupId=tact-stock] (Re-)joining group
+2020-11-15 22:22:24.520 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: 0efa8fb0f4c73d92
+2020-11-15 22:22:24.521 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1605450144520
+2020-11-15 22:22:24.532 [main] INFO  org.apache.kafka.clients.consumer.KafkaConsumer - [Consumer clientId=consumer-tact-stock-3, groupId=tact-stock] Subscribed to topic(s): seller_event
+2020-11-15 22:22:24.532 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService
+2020-11-15 22:22:24.535 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  o.a.k.c.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-tact-stock-2, groupId=tact-stock] Join group failed with org.apache.kafka.common.errors.MemberIdRequiredException: The group member needs to have a valid member id before actually entering a consumer group
+2020-11-15 22:22:24.536 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  o.a.k.c.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-tact-stock-2, groupId=tact-stock] (Re-)joining group
+2020-11-15 22:22:24.536 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  o.a.k.c.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-tact-stock-1, groupId=tact-stock] Join group failed with org.apache.kafka.common.errors.MemberIdRequiredException: The group member needs to have a valid member id before actually entering a consumer group
+2020-11-15 22:22:24.536 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  o.a.k.c.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-tact-stock-1, groupId=tact-stock] (Re-)joining group
+2020-11-15 22:22:24.537 [main] INFO  org.apache.kafka.clients.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [192.168.1.253:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = tact-stock
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2020-11-15 22:22:24.542 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version: 2.5.1
+2020-11-15 22:22:24.542 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: 0efa8fb0f4c73d92
+2020-11-15 22:22:24.543 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1605450144542
+2020-11-15 22:22:24.550 [main] INFO  org.apache.kafka.clients.consumer.KafkaConsumer - [Consumer clientId=consumer-tact-stock-4, groupId=tact-stock] Subscribed to topic(s): order_command
+2020-11-15 22:22:24.550 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService
+2020-11-15 22:22:24.551 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-tact-stock-3, groupId=tact-stock] Cluster ID: h6x-JsM5RtimFHWXnhkkxQ
+2020-11-15 22:22:24.552 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-tact-stock-3, groupId=tact-stock] Discovered group coordinator 192.168.1.253:9092 (id: 2147483647 rack: null)
+2020-11-15 22:22:24.552 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-10004"]
+2020-11-15 22:22:24.554 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-tact-stock-3, groupId=tact-stock] (Re-)joining group
+2020-11-15 22:22:24.557 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-tact-stock-2, groupId=tact-stock] Finished assignment for group at generation 117: {consumer-tact-stock-1-671a6db7-46ce-4290-83e3-4022e23db9fd=Assignment(partitions=[goods_event-0]), consumer-tact-stock-2-33d44e63-e59b-4321-8b25-8648b701e677=Assignment(partitions=[warehouse_event-0])}
+2020-11-15 22:22:24.563 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  o.a.k.c.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-tact-stock-1, groupId=tact-stock] Successfully joined group with generation 117
+2020-11-15 22:22:24.563 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  o.a.k.c.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-tact-stock-2, groupId=tact-stock] Successfully joined group with generation 117
+2020-11-15 22:22:24.564 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-tact-stock-3, groupId=tact-stock] Join group failed with org.apache.kafka.common.errors.MemberIdRequiredException: The group member needs to have a valid member id before actually entering a consumer group
+2020-11-15 22:22:24.565 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-tact-stock-4, groupId=tact-stock] Cluster ID: h6x-JsM5RtimFHWXnhkkxQ
+2020-11-15 22:22:24.565 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-tact-stock-3, groupId=tact-stock] (Re-)joining group
+2020-11-15 22:22:24.565 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-tact-stock-4, groupId=tact-stock] Discovered group coordinator 192.168.1.253:9092 (id: 2147483647 rack: null)
+2020-11-15 22:22:24.566 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-tact-stock-4, groupId=tact-stock] (Re-)joining group
+2020-11-15 22:22:24.571 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-tact-stock-2, groupId=tact-stock] Adding newly assigned partitions: warehouse_event-0
+2020-11-15 22:22:24.571 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-tact-stock-1, groupId=tact-stock] Adding newly assigned partitions: goods_event-0
+2020-11-15 22:22:24.580 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 10004 (http) with context path ''
+2020-11-15 22:22:24.582 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-tact-stock-4, groupId=tact-stock] Join group failed with org.apache.kafka.common.errors.MemberIdRequiredException: The group member needs to have a valid member id before actually entering a consumer group
+2020-11-15 22:22:24.583 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-tact-stock-4, groupId=tact-stock] (Re-)joining group
+2020-11-15 22:22:24.596 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-tact-stock-1, groupId=tact-stock] Setting offset for partition goods_event-0 to the committed offset FetchPosition{offset=12, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[192.168.1.253:9092 (id: 0 rack: null)], epoch=0}}
+2020-11-15 22:22:24.596 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-tact-stock-2, groupId=tact-stock] Setting offset for partition warehouse_event-0 to the committed offset FetchPosition{offset=76, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[192.168.1.253:9092 (id: 0 rack: null)], epoch=0}}
+2020-11-15 22:22:24.598 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  o.s.kafka.listener.KafkaMessageListenerContainer - tact-stock: partitions assigned: [goods_event-0]
+2020-11-15 22:22:24.598 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  o.s.kafka.listener.KafkaMessageListenerContainer - tact-stock: partitions assigned: [warehouse_event-0]
+2020-11-15 22:22:24.954 [main] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2020-11-15 22:22:25.306 [main] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2020-11-15 22:22:25.325 [main] INFO  com.tactbug.mall.stock.TactStockApplication - Started TactStockApplication in 8.327 seconds (JVM running for 9.57)
+2020-11-15 22:22:26.080 [RMI TCP Connection(3)-192.168.1.25] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-15 22:22:26.080 [RMI TCP Connection(3)-192.168.1.25] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-15 22:22:26.080 [RMI TCP Connection(3)-192.168.1.25] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2020-11-15 22:22:27.571 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  o.a.k.c.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-tact-stock-1, groupId=tact-stock] Attempt to heartbeat failed since group is rebalancing
+2020-11-15 22:22:27.571 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  o.a.k.c.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-tact-stock-2, groupId=tact-stock] Attempt to heartbeat failed since group is rebalancing
+2020-11-15 22:22:27.573 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-tact-stock-2, groupId=tact-stock] Revoke previously assigned partitions warehouse_event-0
+2020-11-15 22:22:27.573 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-tact-stock-1, groupId=tact-stock] Revoke previously assigned partitions goods_event-0
+2020-11-15 22:22:27.574 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  o.s.kafka.listener.KafkaMessageListenerContainer - tact-stock: partitions revoked: [warehouse_event-0]
+2020-11-15 22:22:27.574 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  o.s.kafka.listener.KafkaMessageListenerContainer - tact-stock: partitions revoked: [goods_event-0]
+2020-11-15 22:22:27.575 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  o.a.k.c.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-tact-stock-2, groupId=tact-stock] (Re-)joining group
+2020-11-15 22:22:27.575 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  o.a.k.c.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-tact-stock-1, groupId=tact-stock] (Re-)joining group
+2020-11-15 22:22:27.655 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-tact-stock-2, groupId=tact-stock] Finished assignment for group at generation 118: {consumer-tact-stock-4-a138a60a-0133-4693-8095-44610de09253=Assignment(partitions=[order_command-0]), consumer-tact-stock-1-671a6db7-46ce-4290-83e3-4022e23db9fd=Assignment(partitions=[goods_event-0]), consumer-tact-stock-3-26d34cdb-ccd4-481a-a010-582345e22532=Assignment(partitions=[seller_event-0]), consumer-tact-stock-2-33d44e63-e59b-4321-8b25-8648b701e677=Assignment(partitions=[warehouse_event-0])}
+2020-11-15 22:22:27.655 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  o.a.k.c.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-tact-stock-1, groupId=tact-stock] Successfully joined group with generation 118
+2020-11-15 22:22:27.655 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-tact-stock-3, groupId=tact-stock] Successfully joined group with generation 118
+2020-11-15 22:22:27.655 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-tact-stock-1, groupId=tact-stock] Adding newly assigned partitions: goods_event-0
+2020-11-15 22:22:27.655 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  o.a.k.c.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-tact-stock-2, groupId=tact-stock] Successfully joined group with generation 118
+2020-11-15 22:22:27.655 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-tact-stock-2, groupId=tact-stock] Adding newly assigned partitions: warehouse_event-0
+2020-11-15 22:22:27.655 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-tact-stock-4, groupId=tact-stock] Successfully joined group with generation 118
+2020-11-15 22:22:27.655 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-tact-stock-3, groupId=tact-stock] Adding newly assigned partitions: seller_event-0
+2020-11-15 22:22:27.655 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-tact-stock-4, groupId=tact-stock] Adding newly assigned partitions: order_command-0
+2020-11-15 22:22:27.672 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-tact-stock-4, groupId=tact-stock] Setting offset for partition order_command-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[192.168.1.253:9092 (id: 0 rack: null)], epoch=0}}
+2020-11-15 22:22:27.672 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-tact-stock-1, groupId=tact-stock] Setting offset for partition goods_event-0 to the committed offset FetchPosition{offset=12, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[192.168.1.253:9092 (id: 0 rack: null)], epoch=0}}
+2020-11-15 22:22:27.672 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-tact-stock-3, groupId=tact-stock] Setting offset for partition seller_event-0 to the committed offset FetchPosition{offset=17, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[192.168.1.253:9092 (id: 0 rack: null)], epoch=0}}
+2020-11-15 22:22:27.672 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  o.a.k.c.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-tact-stock-2, groupId=tact-stock] Setting offset for partition warehouse_event-0 to the committed offset FetchPosition{offset=76, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[192.168.1.253:9092 (id: 0 rack: null)], epoch=0}}
+2020-11-15 22:22:27.672 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.s.kafka.listener.KafkaMessageListenerContainer - tact-stock: partitions assigned: [order_command-0]
+2020-11-15 22:22:27.672 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  o.s.kafka.listener.KafkaMessageListenerContainer - tact-stock: partitions assigned: [goods_event-0]
+2020-11-15 22:22:27.672 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  o.s.kafka.listener.KafkaMessageListenerContainer - tact-stock: partitions assigned: [warehouse_event-0]
+2020-11-15 22:22:27.672 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.kafka.listener.KafkaMessageListenerContainer - tact-stock: partitions assigned: [seller_event-0]

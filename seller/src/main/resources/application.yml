@@ -1,0 +1,13 @@
+server:
+  port: 10003
+spring:
+  application:
+    name: tact-seller
+  kafka:
+    bootstrap-servers: ${KAFKA:192.168.1.253:9092}
+  redis:
+    host: ${REDIS:192.168.1.253}
+
+topic:
+  seller:
+    event: ${SELLER_EVENT:seller_event}
