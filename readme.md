@@ -13,7 +13,7 @@
 - goods：商品服务，还未开发，只提供了一个模拟商品服务领域事件广播的controller
 - order：订单服务，还未开发，只提供了一个模拟订单服务命令消息的controller
 - seller：卖家服务，还未开发，只提供了一个模拟卖家服务领域事件广播的controller
-- stock：库存服务，<a href = "https://github.com/tactbug/ddd-mall">详见此处</a>
+- stock：库存服务，<a href = "https://github.com/tactbug/ddd-mall/tree/master/stock">详见此处</a>
   
 项目采用java开发，springboot 2.3.4作为技术基点，使用JPA做持久化处理(开启DDL模式)
 
