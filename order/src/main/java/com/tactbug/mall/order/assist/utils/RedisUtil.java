@@ -71,29 +71,42 @@ public class RedisUtil {
     }
 
     private Long machineIdGetter(){
+        //使用redis hash进行存储
         HashOperations<String, Object, Object> hashOperations = stringRedisTemplate.opsForHash();
+
+        //1. 判断当前IP是否有已经存在的标识，有则返回
         if (hashOperations.hasKey(MACHINE_ID_YIELD, localIp)){
             Object id = hashOperations.get(MACHINE_ID_YIELD, localIp);
             assert id != null;
             return Long.valueOf(id.toString());
         }
-        Map<Object, Object> entries = hashOperations.entries(MACHINE_ID_YIELD);
+
+        //生成id的分布式锁标记，防止当前实例重复生成
         String idGetterLock = applicationName + ":" + MACHINE_ID_GETTER_METHOD;
+
+        //上分布式锁
+        tryLock(idGetterLock);
+        Map<Object, Object> entries = hashOperations.entries(MACHINE_ID_YIELD);
+
+        //2. 如果当前标识位数超过集群最大长度限制则抛出异常
+        if (entries.size() >= MAX_MACHINE_ID){
+            unlock(idGetterLock);
+            throw new TactRedisException("集群数量超出限制:[" + MAX_MACHINE_ID + "]");
+        }
+
+        //3. 判断redis中是否存在已经生成的标识，如果没有则生成当前IP标识，初始标识1
         if (entries.isEmpty()){
-            tryLock(idGetterLock);
             hashOperations.put(MACHINE_ID_YIELD, localIp, ""+1);
             unlock(idGetterLock);
             return 1L;
         }
-        if (entries.size() >= MAX_MACHINE_ID){
-            throw new TactRedisException("集群数量超出限制:[" + MAX_MACHINE_ID);
-        }
+
+        //4. 如果redis中已经存在标记则以累加填充的方式为当前IP生成合适的标识
         Collection<Object> values = entries.values();
         List<Long> keyIds = values.stream()
                 .map(v -> Long.valueOf(v.toString()))
                 .sorted()
                 .collect(Collectors.toList());
-        tryLock(idGetterLock);
         Long id = 1L;
         for (Long i :
                 keyIds) {
@@ -107,4 +120,5 @@ public class RedisUtil {
         unlock(idGetterLock);
         return id;
     }
+
 }

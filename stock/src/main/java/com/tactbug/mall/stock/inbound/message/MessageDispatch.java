@@ -95,9 +95,17 @@ public class MessageDispatch {
     }
 
     private boolean checkDuplicate(String data){
+        Long id = messageId(data);
         Optional<Message> optional =
-                messageJpa.findById(messageId(data));
-        return optional.isPresent();
+                messageJpa.findById(id);
+        if (optional.isPresent()){
+            return true;
+        }else {
+            Message message = new Message();
+            message.setId(id);
+            messageJpa.save(message);
+            return false;
+        }
     }
 
     private Long messageId(String data){
