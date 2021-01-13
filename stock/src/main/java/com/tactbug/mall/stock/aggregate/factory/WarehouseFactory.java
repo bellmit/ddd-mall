@@ -5,7 +5,6 @@ import com.tactbug.mall.stock.aggregate.Warehouse;
 import com.tactbug.mall.stock.aggregate.specification.WarehouseSpecification;
 import com.tactbug.mall.stock.aggregate.valueObject.WarehouseStatusEnum;
 import com.tactbug.mall.stock.aggregate.valueObject.WarehouseTypeEnum;
-import com.tactbug.mall.stock.assist.utils.StockCodeUtil;
 
 import java.util.Date;
 import java.util.List;

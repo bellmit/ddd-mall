@@ -3,8 +3,8 @@ package com.tactbug.mall.seller.inbound.web;
 import com.tactbug.mall.common.message.event.EventMessage;
 import com.tactbug.mall.common.message.event.seller.SellerEvent;
 import com.tactbug.mall.common.message.event.seller.SellerEventTypeEnum;
+import com.tactbug.mall.common.utils.CodeUtil;
 import com.tactbug.mall.common.utils.JacksonUtil;
-import com.tactbug.mall.seller.assist.utils.SellerCodeUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,13 +24,16 @@ public class MockGoodsEvent {
     @Value("${topic.seller.event}")
     private String sellerEvent;
 
+    @Value("${spring.application.name}")
+    private String applicationName;
+
     @ApiOperation("模拟卖家服务创建店铺事件")
     @GetMapping("/openStore")
     public void sellerOpenShop(Long sellerId) {
         EventMessage<SellerEventTypeEnum, SellerEvent> eventMessage = new EventMessage<>();
         SellerEvent sellerEventBody = new SellerEvent();
         sellerEventBody.setSellerId(sellerId);
-        eventMessage.setMessageId(SellerCodeUtil.nextId());
+        eventMessage.setMessageId(CodeUtil.nextId(applicationName));
         eventMessage.setEventBody(sellerEventBody);
         eventMessage.setEventType(SellerEventTypeEnum.OPEN_SHOP);
         String message = JacksonUtil.objectToString(eventMessage);
@@ -43,7 +46,7 @@ public class MockGoodsEvent {
         EventMessage<SellerEventTypeEnum, SellerEvent> eventMessage = new EventMessage<>();
         SellerEvent sellerEventBody = new SellerEvent();
         sellerEventBody.setSellerId(sellerId);
-        eventMessage.setMessageId(SellerCodeUtil.nextId());
+        eventMessage.setMessageId(CodeUtil.nextId(applicationName));
         eventMessage.setEventType(SellerEventTypeEnum.CLOSE_STORE);
         eventMessage.setEventBody(sellerEventBody);
         String message = JacksonUtil.objectToString(eventMessage);

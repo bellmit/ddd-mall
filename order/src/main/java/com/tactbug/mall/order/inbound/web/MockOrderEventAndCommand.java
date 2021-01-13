@@ -5,8 +5,8 @@ import com.tactbug.mall.common.message.command.CommandMessage;
 import com.tactbug.mall.common.message.command.order.OrderCommandTypeEnum;
 import com.tactbug.mall.common.message.command.order.sellGoods.SellCommand;
 import com.tactbug.mall.common.message.event.goods.GoodsEvent;
+import com.tactbug.mall.common.utils.CodeUtil;
 import com.tactbug.mall.common.utils.JacksonUtil;
-import com.tactbug.mall.order.assist.utils.OrderCodeUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,14 +25,14 @@ public class MockOrderEventAndCommand {
     @Autowired
     private KafkaTemplate<String, String> commandKafkaTemplate;
 
-    private static final Long SELF_ID = 9527L;
-
-
     @Value("${topic.order.command}")
     private String orderCommand;
 
     @Value("${topic.order.callback}")
     private String orderCommandCallback;
+
+    @Value("${spring.application.name}")
+    private String applicationName;
 
     @ApiOperation(value = "模拟订单服务商品销售命令")
     @PostMapping("/selling")
@@ -45,7 +45,7 @@ public class MockOrderEventAndCommand {
                 CallBackTopics.create(orderCommandCallback, OrderCommandTypeEnum.SELLING.toString());
 
         CommandMessage<OrderCommandTypeEnum, SellCommand> goodsCommand =
-                new CommandMessage<>(OrderCodeUtil.nextId(), OrderCommandTypeEnum.SELLING, sellCommand, callBackTopics);
+                new CommandMessage<>(CodeUtil.nextId(applicationName), OrderCommandTypeEnum.SELLING, sellCommand, callBackTopics);
 
         String message = JacksonUtil.objectToString(goodsCommand);
 

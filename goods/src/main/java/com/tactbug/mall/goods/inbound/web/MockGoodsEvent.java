@@ -3,8 +3,8 @@ package com.tactbug.mall.goods.inbound.web;
 import com.tactbug.mall.common.message.event.EventMessage;
 import com.tactbug.mall.common.message.event.goods.GoodsEvent;
 import com.tactbug.mall.common.message.event.goods.GoodsEventTypeEnum;
+import com.tactbug.mall.common.utils.CodeUtil;
 import com.tactbug.mall.common.utils.JacksonUtil;
-import com.tactbug.mall.goods.assist.utils.GoodsCodeUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +24,9 @@ public class MockGoodsEvent {
     @Value("${topic.goods.event}")
     private String goodsEvent;
 
+    @Value("${spring.application.name}")
+    private String applicationName;
+
     @ApiOperation("模拟商品服务创建商品事件")
     @GetMapping("/create")
     public void sellerCreateGoods(Long sellerId, Long goodsId, Integer quantity) {
@@ -34,7 +37,7 @@ public class MockGoodsEvent {
         goodsEventBody.setQuantity(quantity);
 
         EventMessage<GoodsEventTypeEnum, GoodsEvent> eventMessage = new EventMessage<>();
-        eventMessage.setMessageId(GoodsCodeUtil.nextId());
+        eventMessage.setMessageId(CodeUtil.nextId(applicationName));
         eventMessage.setEventBody(goodsEventBody);
         eventMessage.setEventType(GoodsEventTypeEnum.SELLER_CREATE_GOODS);
         String event = JacksonUtil.objectToString(eventMessage);
@@ -51,7 +54,7 @@ public class MockGoodsEvent {
         goodsEventBody.setQuantity(0);
 
         EventMessage<GoodsEventTypeEnum, GoodsEvent> eventMessage = new EventMessage<>();
-        eventMessage.setMessageId(GoodsCodeUtil.nextId());
+        eventMessage.setMessageId(CodeUtil.nextId(applicationName));
         eventMessage.setEventBody(goodsEventBody);
         eventMessage.setEventType(GoodsEventTypeEnum.SELLER_BAN_GOODS);
         String message = JacksonUtil.objectToString(eventMessage);
@@ -68,7 +71,7 @@ public class MockGoodsEvent {
         goodsEventBody.setQuantity(quantity);
 
         EventMessage<GoodsEventTypeEnum, GoodsEvent> eventMessage = new EventMessage<>();
-        eventMessage.setMessageId(GoodsCodeUtil.nextId());
+        eventMessage.setMessageId(CodeUtil.nextId(applicationName));
         eventMessage.setEventBody(goodsEventBody);
         eventMessage.setEventType(GoodsEventTypeEnum.SELLER_UPDATE_QUANTITY);
         String message = JacksonUtil.objectToString(eventMessage);

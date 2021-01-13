@@ -1,6 +1,8 @@
-package com.tactbug.mall.seller.assist.utils;
+package com.tactbug.mall.common.utils;
 
 import com.tactbug.mall.common.exceptions.TactRedisException;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +19,9 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
+@Setter
 @Component
+@Slf4j
 public class RedisUtil {
 
     private static String localIp;
@@ -25,6 +29,7 @@ public class RedisUtil {
 
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
+
     @Autowired
     private RedissonClient redissonClient;
     private static final int REDISSON_WAIT_TIME = 1;
@@ -33,13 +38,13 @@ public class RedisUtil {
     private static final String MACHINE_ID_GETTER_METHOD = "getMachineId";
     private static final String MACHINE_ID_YIELD = "machineId";
 
-    @Value("${spring.application.name}")
     private String applicationName;
 
     static {
         try {
             localIp = InetAddress.getLocalHost().getHostAddress();
         } catch (UnknownHostException e) {
+            log.error(ExceptionUtil.getMessage(e));
             e.printStackTrace();
         }
     }
@@ -49,6 +54,7 @@ public class RedisUtil {
         try {
             lock.tryLock(REDISSON_WAIT_TIME, REDISSON_LEASE_TIME, TimeUnit.SECONDS);
         } catch (InterruptedException e) {
+            log.error(ExceptionUtil.getMessage(e));
             throw new TactRedisException(
                     "分布式锁获取异常: ipAddr:[" + localIp + "], "
                     + "application:[" + applicationName + "], "
@@ -96,7 +102,7 @@ public class RedisUtil {
 
         //3. 判断redis中是否存在已经生成的标识，如果没有则生成当前IP标识，初始标识1
         if (entries.isEmpty()){
-            hashOperations.put(MACHINE_ID_YIELD, localIp, ""+1);
+            hashOperations.put(MACHINE_ID_YIELD, localIp, "1");
             unlock(idGetterLock);
             return 1L;
         }

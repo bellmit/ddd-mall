@@ -1,7 +1,6 @@
 package com.tactbug.mall.order.inbound.message;
 
 import com.tactbug.mall.common.message.command.order.OrderCommandTypeEnum;
-import com.tactbug.mall.common.vo.ResultResponse;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.handler.annotation.Header;

@@ -9,6 +9,5 @@ spring:
     host: ${REDIS:192.168.1.253}
 topic:
   order:
-    event: ${ORDER_EVENT:order_event}
     command: ${ORDER_COMMAND:order_command}
     callback: ${GOODS_COMMAND_CALLBACK:order_command_callback}

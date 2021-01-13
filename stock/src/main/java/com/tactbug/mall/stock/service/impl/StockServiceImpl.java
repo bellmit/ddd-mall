@@ -5,6 +5,8 @@ import com.tactbug.mall.common.message.command.order.sellGoods.SellCallBack;
 import com.tactbug.mall.common.message.event.EventMessage;
 import com.tactbug.mall.common.message.event.stock.WarehouseEvent;
 import com.tactbug.mall.common.message.event.stock.WarehouseEventTypeEnum;
+import com.tactbug.mall.common.utils.CodeUtil;
+import com.tactbug.mall.common.utils.RedisUtil;
 import com.tactbug.mall.stock.aggregate.Goods;
 import com.tactbug.mall.stock.aggregate.Seller;
 import com.tactbug.mall.stock.aggregate.Warehouse;
@@ -14,14 +16,13 @@ import com.tactbug.mall.stock.aggregate.valueObject.WarehouseStatusEnum;
 import com.tactbug.mall.stock.aggregate.valueObject.WarehouseTypeEnum;
 import com.tactbug.mall.stock.assist.exception.TactStockException;
 import com.tactbug.mall.stock.assist.model.GoodsSellInfo;
-import com.tactbug.mall.stock.assist.utils.RedisUtil;
-import com.tactbug.mall.stock.assist.utils.StockCodeUtil;
 import com.tactbug.mall.stock.outbound.publisher.WarehouseEventPublisher;
 import com.tactbug.mall.stock.outbound.repository.goods.GoodsRepository;
 import com.tactbug.mall.stock.outbound.repository.seller.SellerRepository;
 import com.tactbug.mall.stock.outbound.repository.warehouse.WarehouseRepository;
 import com.tactbug.mall.stock.service.StockService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -40,6 +41,9 @@ public class StockServiceImpl implements StockService {
     private static final Long SELF_ID = 9527L;
 
     private static final String REDUCE_TAG = "reduce_stock";
+
+    @Value("${spring.application.name}")
+    private String applicationName;
 
     @Autowired
     private WarehouseRepository warehouseRepository;
@@ -241,7 +245,7 @@ public class StockServiceImpl implements StockService {
             }
         }
         CallBackMessage<List<SellCallBack>> success = CallBackMessage.success(list);
-        success.setMessageId(StockCodeUtil.nextId());
+        success.setMessageId(CodeUtil.nextId(applicationName));
         return success;
     }
 

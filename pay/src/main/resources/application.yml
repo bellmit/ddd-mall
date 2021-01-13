@@ -2,9 +2,9 @@ server:
   port: 10004
 spring:
   application:
-    name: tact-stock
+    name: tact-pay
   datasource:
-    url: ${MYSQL:jdbc:mysql://192.168.1.253:3306/stock?allowPublicKeyRetrieval=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai}
+    url: ${MYSQL:jdbc:mysql://192.168.1.253:3306/pay?allowPublicKeyRetrieval=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai}
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: ${MYSQL_USERNAME:root}
     password: ${MYSQL_PASSWORD:900922}
